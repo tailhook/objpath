@@ -2,6 +2,8 @@
 #include <malloc.h>
 #include <string.h>
 #include <assert.h>
+#include <ctype.h>
+#include <stdlib.h>
 
 #include "objpath.h"
 
@@ -124,7 +126,6 @@ void *objpath_compile(char *data) {
 }
 
 void *objpath_start(void *pattern) {
-    node_t *node = ((pattern_t *)pattern)->head;
     context_t *ctx = malloc(sizeof(context_t));
     ctx->pattern = pattern;
     ctx->cur = ctx->pattern->head;
