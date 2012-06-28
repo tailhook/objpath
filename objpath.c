@@ -65,7 +65,7 @@ void *objpath_compile(char *data) {
                 while(isalnum(*c) || *c == '%') ++c;
                 next = malloc(sizeof(node_t) + (c - key + 1));
                 assert(next);
-                next->type = NODE_VALUES;
+                next->type = NODE_KEYS;
                 memcpy(next->data.str, key, c - key);
                 next->data.str[c - key] = 0;
             } else {
