@@ -53,7 +53,7 @@ void *objpath_compile(char *data) {
         case '/': {
             ++ c;
             char *key = c;
-            while(isalnum(*c)) ++c;
+            while(isalnum(*c) || *c == '-' || *c == '_') ++c;
             if(*c == '*') {
                 while(isalnum(*c) || *c == '*') ++c;
                 next = malloc(sizeof(node_t) + (c - key + 1));
