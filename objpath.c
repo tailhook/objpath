@@ -117,6 +117,7 @@ void *objpath_compile(char *data) {
     node_t *final = malloc(sizeof(node_t));
     assert(final);
     final->type = NODE_SUBMIT;
+    final->next = NULL;
     if(prev) {
         prev->next = final;
     } else {
