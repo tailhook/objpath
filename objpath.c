@@ -134,7 +134,9 @@ void *objpath_start(void *pattern) {
 }
 
 int objpath_next(void *context, int *opcode, objpath_value_t *val,
-    void **object, void **iterator) {
+    void **object, void **iterator)
+{
+    (void) iterator;
     context_t *ctx = context;
 
     if(!*object)  // No backtracking yet
